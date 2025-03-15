@@ -28,38 +28,39 @@
         /// </summary>
         private void InitializeComponent()
         {
-            button1 = new Button();
-            button2 = new Button();
-            textBox1 = new TextBox();
+            btnKomputer = new Button();
+            btnMonitor = new Button();
+            CenaCalkowita = new TextBox();
             label1 = new Label();
             SuspendLayout();
             // 
-            // button1
+            // btnKomputer
             // 
-            button1.Location = new Point(12, 42);
-            button1.Name = "button1";
-            button1.Size = new Size(134, 46);
-            button1.TabIndex = 0;
-            button1.Text = "Komputer";
-            button1.UseVisualStyleBackColor = true;
-            button1.Click += button1_Click;
+            btnKomputer.Location = new Point(12, 42);
+            btnKomputer.Name = "btnKomputer";
+            btnKomputer.Size = new Size(134, 46);
+            btnKomputer.TabIndex = 0;
+            btnKomputer.Text = "Komputer";
+            btnKomputer.UseVisualStyleBackColor = true;
+            btnKomputer.Click += button1_Click;
             // 
-            // button2
+            // btnMonitor
             // 
-            button2.Location = new Point(165, 42);
-            button2.Name = "button2";
-            button2.Size = new Size(134, 46);
-            button2.TabIndex = 1;
-            button2.Text = "Monitor";
-            button2.UseVisualStyleBackColor = true;
-            button2.Click += button2_Click;
+            btnMonitor.Location = new Point(165, 42);
+            btnMonitor.Name = "btnMonitor";
+            btnMonitor.Size = new Size(134, 46);
+            btnMonitor.TabIndex = 1;
+            btnMonitor.Text = "Monitor";
+            btnMonitor.UseVisualStyleBackColor = true;
+            btnMonitor.Click += button2_Click;
             // 
-            // textBox1
+            // CenaCalkowita
             // 
-            textBox1.Location = new Point(320, 61);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(135, 27);
-            textBox1.TabIndex = 2;
+            CenaCalkowita.Location = new Point(320, 61);
+            CenaCalkowita.Name = "CenaCalkowita";
+            CenaCalkowita.Size = new Size(135, 27);
+            CenaCalkowita.TabIndex = 2;
+            CenaCalkowita.TextChanged += CenaCalkowita_TextChanged;
             // 
             // label1
             // 
@@ -69,7 +70,6 @@
             label1.Size = new Size(57, 20);
             label1.TabIndex = 3;
             label1.Text = "Cena zł";
-            label1.Click += label1_Click;
             // 
             // Form1
             // 
@@ -77,9 +77,9 @@
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(470, 120);
             Controls.Add(label1);
-            Controls.Add(textBox1);
-            Controls.Add(button2);
-            Controls.Add(button1);
+            Controls.Add(CenaCalkowita);
+            Controls.Add(btnMonitor);
+            Controls.Add(btnKomputer);
             Name = "Form1";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Kalkulator Zestawów Komputerowych";
@@ -89,9 +89,9 @@
 
         #endregion
 
-        private Button button1;
-        private Button button2;
-        private TextBox textBox1;
+        private Button btnKomputer;
+        private Button btnMonitor;
+        private TextBox CenaCalkowita;
         private Label label1;
     }
 }

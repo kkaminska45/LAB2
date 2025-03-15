@@ -11,42 +11,50 @@ using System.Windows.Forms;
 namespace LAB2
 {
     public partial class Form3 : Form
+
     {
-        public Form3()
+        private Form1 glowneOkno;
+
+        public Form3(Form1 okno)
         {
             InitializeComponent();
-        }
-
-        private void monitory_SelectedIndexChanged(object sender, EventArgs e)
-        {
+            glowneOkno = okno;
         }
 
         private void Monitory_SelectedIndexChanged_1(object sender, EventArgs e)
         {
             Dictionary<string, string> cenyMonitorów = new Dictionary<string, string>()
             {
-                { "Monitor 1", "899 zł" },
-                { "Monitor 2", "1199 zł" },
-                { "Monitor 3", "1599 zł" },
-                { "Monitor 4", "699 zł" },
-                { "Monitor 5", "299 zł" }
+                { "Monitor 1", "899" },
+                { "Monitor 2", "1199" },
+                { "Monitor 3", "1599" },
+                { "Monitor 4", "699" },
+                { "Monitor 5", "299" }
             };
 
             string wybranyMonitor = Monitory.SelectedItem.ToString();
 
             if (cenyMonitorów.ContainsKey(wybranyMonitor))
             {
-                textBox1.Text = cenyMonitorów[wybranyMonitor];
+                CenaMonitora.Text = cenyMonitorów[wybranyMonitor];
             }
             else
             {
-                textBox1.Text = "Brak ceny";
+                CenaMonitora.Text = "Brak ceny";
             }
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void btnANULUJmonitor_Click(object sender, EventArgs e)
         {
+            this.Close();
+        }
 
+        private void btnOKmonitor_Click_1(object sender, EventArgs e)
+        {
+            glowneOkno.cena1 = int.Parse(CenaMonitora.Text);
+            glowneOkno.ustawCene();
+
+            this.Close();
         }
     }
 }
